@@ -1,0 +1,1 @@
+export default async function handler(req,res){ const tid=req.query.transactionId; res.redirect(`/?pay=success&tid=${tid}`) }

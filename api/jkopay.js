@@ -1,0 +1,1 @@
+export default async function handler(req,res){ return res.json({ info: '街口支付申請 https://www.jkopay.com/ 流程與 LINE Pay 相同' }) }
