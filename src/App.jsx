@@ -1,10 +1,15 @@
+
 import { useState } from 'react'
 import MapView from './components/MapView.jsx'
 import Auth from './components/Auth.jsx'
 export default function App(){
-  const [user,setUser]=useState(()=>{try{return JSON.parse(localStorage.getItem('yousi_user'))}catch{return null}})
+  const [user,setUser]=useState(()=>{
+    try{return JSON.parse(localStorage.getItem('yousi_user'))}catch{return null}
+  })
   const [mode,setMode]=useState('passenger')
-  const [rides,setRides]=useState(()=>{try{return JSON.parse(localStorage.getItem('yousi_rides')||'[]'))}catch{return []}})
+  const [rides,setRides]=useState(()=>{
+    try{return JSON.parse(localStorage.getItem('yousi_rides')||'[]')}catch{return []}
+  })
   if(!user) return <Auth onLogin={u=>{localStorage.setItem('yousi_user',JSON.stringify(u)); setUser(u)}}/>
   return (<div style={{height:'100vh',display:'flex',flexDirection:'column'}}>
     <header style={{background:'#111827',color:'white',padding:'12px 20px',display:'flex',justifyContent:'space-between'}}>
