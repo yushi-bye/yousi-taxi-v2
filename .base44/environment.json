@@ -1,0 +1,22 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "LINE_PAY_CHANNEL_ID",
+      "description": "LINE Pay merchant channel ID from pay.line.me — optional; app runs in mock mode without it",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "LINE_PAY_CHANNEL_SECRET",
+      "description": "LINE Pay merchant channel secret from pay.line.me — optional; app runs in mock mode without it",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "LINE_PAY_SANDBOX",
+      "description": "Set to 'true' to use LINE Pay sandbox API — optional",
+      "requiredAtBoot": false
+    }
+  ]
+}
